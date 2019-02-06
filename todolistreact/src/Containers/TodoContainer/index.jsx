@@ -25,7 +25,7 @@ class TodoContainer extends React.Component {
         const key = (Math.random() * 100).toFixed(0); // cria um número randomico para key
 
         this.setState({
-          dataSource: [...dataSource, { key: Number(key), text: valueInput }],
+          dataSource: [...dataSource, { key: Number(key), text: valueInput }], // o spread "...datasource" serve para manter as informações que a state tem no momento para poder adicionar mais
           valueInput: ""
         });
       }
