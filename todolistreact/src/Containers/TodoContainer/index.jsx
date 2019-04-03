@@ -51,14 +51,9 @@ class TodoContainer extends React.Component {
 
   excluiItem = key => {
     let { dataSource } = this.state;
-    const elemento = dataSource.filter(x => x.key === key)[0];
-    console.log("elemento", elemento); // observe o filtro do elemento
-    const index = dataSource.indexOf(elemento);
-    console.log("index", index); // recuperando a posição do array
-    dataSource.splice(index, 1);
-    console.log("dataSource", dataSource); // removido o index do array
+    const newData = dataSource.filter(x => x.key !== key);
     this.setState({
-      dataSource: [...dataSource]
+      dataSource: newData
     });
   };
 
